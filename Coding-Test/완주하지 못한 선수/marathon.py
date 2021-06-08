@@ -1,4 +1,4 @@
-def solution(participant, completion):
+def solution_a(participant, completion):
     #딕셔너리 자료형 선언
     answer={}
     #참가한 인원은 key 값(이름), value 값(1)
@@ -12,3 +12,13 @@ def solution(participant, completion):
     for person in answer:
         if answer[person] :
             return person
+        
+#다른 solution
+#컨테이너에 동일한 값이 몇개인지 파악
+import collections
+
+def solution_b(participant, completion):
+    #collections.Counter 사용하여 연산이 가능
+    answer = collections.Counter(participant) - collections.Counter(completion)
+    #answer에 dict 값으로 저장되어있는 key 값을 list로 변환하여 return
+    return list(answer.keys())[0]
