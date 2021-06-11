@@ -1,6 +1,6 @@
 from itertools import combinations
 
-def solution(nums):
+def solution_my(nums):
     answer = 0
     #combinations 함수를 사용하여 숫자를 세개씩 조합한 리스트 생성
     comb_list = combinations(nums,3)
@@ -17,4 +17,19 @@ def solution(nums):
         if prime_number_false == 0:
             answer +=1
             
+    return answer
+
+def solution_a(nums):
+    from itertools import combinations as cb
+    answer = 0
+    
+    for a in cb(nums, 3):
+        cand = sum(a)
+        for j in range(2, cand):
+            if cand%j==0:
+                break
+        #else와 for문을 같은 줄에 입력하면
+        #break로 for문을 빠져나가지 않는 이상 else 문이 실행
+        else:
+            answer += 1
     return answer
