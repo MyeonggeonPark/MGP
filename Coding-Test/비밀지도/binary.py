@@ -51,6 +51,10 @@ def solution_my(n, arr1, arr2):
     return answer_final
 
 #%%
+#2진수 : bin
+#8진수 : oct
+#16진수 : hex
+# |(or) 사용하여 1이 한번이라도 등장하면 1로 출력
 
 def solution_a(n, arr1, arr2):
     answer = []
